@@ -1,3 +1,5 @@
+# Payroll Management System
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
@@ -7,55 +9,156 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About This Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a comprehensive **Payroll Management System** built with Laravel that automates employee payroll calculations with statutory deductions for Kenyan tax requirements. The system provides a complete solution for managing employee records and generating accurate payroll with automatic tax calculations.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Key Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Employee Management
+- **Add Employees**: Create new employee records with personal and employment details
+- **Edit Employees**: Update existing employee information
+- **Delete Employees**: Remove employee records from the system
+- **View Employees**: Display comprehensive employee listings and individual profiles
+- **Salary Assignment**: Assign and modify employee salary structures
 
-## Learning Laravel
+### Payroll Management
+- **Automated Payroll Generation**: Generate payroll for individual employees or bulk processing
+- **Statutory Deductions**: Automatic calculation of Kenyan statutory deductions including:
+  - **SHIF (Social Health Insurance Fund)**: KES 500 flat rate
+  - **Housing Levy**: 1.5% of gross salary
+  - **PAYE (Pay As You Earn)**: 30% income tax on taxable income
+- **Net Salary Calculation**: Automatic computation of net pay after all deductions
+- **Payroll Reports**: Generate detailed payroll reports with breakdowns
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Technical Features
+- **Responsive Design**: Mobile-friendly interface using Bootstrap
+- **Data Validation**: Comprehensive form validation for data integrity
+- **Database Relationships**: Proper relational database structure
+- **Error Handling**: Robust error handling and user feedback
+- **Clean Architecture**: Following Laravel best practices and MVC pattern
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Technology Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Framework**: Laravel 10.x
+- **Database**: MySQL
+- **Frontend**: Blade Templates with Bootstrap 5
+- **Authentication**: Laravel's built-in authentication
+- **Styling**: Bootstrap CSS Framework
+- **Icons**: Font Awesome
+- **Server Requirements**: PHP 8.1+
 
-## Laravel Sponsors
+## Installation & Setup
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Prerequisites
+- PHP >= 8.1
+- Composer
+- MySQL/MariaDB
+- Node.js & NPM (for asset compilation)
 
-### Premium Partners
+### Installation Steps
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/oscar0686/Payroll-System.git
+   cd Payroll-System
+   ```
+
+2. **Install PHP dependencies**
+   ```bash
+   composer install
+   ```
+
+3. **Install JavaScript dependencies**
+   ```bash
+   npm install
+   ```
+
+4. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. **Configure database**
+   Edit `.env` file with your database credentials:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=payroll_system
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
+
+6. **Run database migrations**
+   ```bash
+   php artisan migrate
+   ```
+
+7. **Seed database (optional)**
+   ```bash
+   php artisan db:seed
+   ```
+
+8. **Compile assets**
+   ```bash
+   npm run dev
+   ```
+
+9. **Start the development server**
+   ```bash
+   php artisan serve
+   ```
+
+10. **Access the application**
+    Open your browser and navigate to `http://localhost:8000`
+
+## Usage Examples
+
+### Adding an Employee
+1. Navigate to "Employees" section
+2. Click "Add New Employee"
+3. Fill in employee details including salary
+4. Save the employee record
+
+### Generating Payroll
+1. Go to "Payroll" section
+2. Select employee or generate for all employees
+3. System automatically calculates:
+   - Gross Salary: KES 10,000
+   - SHIF Deduction: KES 500
+   - Housing Levy (1.5%): KES 150
+   - PAYE (30%): KES 2,805 (on taxable income)
+   - **Net Salary: KES 6,545**
+
+## Database Structure
+
+### Employees Table
+- Personal information (name, email, phone, etc.)
+- Employment details (position, department, hire date)
+- Salary information (basic salary, allowances)
+
+### Payroll Table
+- Employee reference
+- Salary breakdown
+- Deduction calculations
+- Net pay computation
+- Pay period information
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Support
+
+If you encounter any issues or have questions, please create an issue in the GitHub repository.
+
+---
+
+**Developed by Oscar Okumu** - Software Developer  
+**Contact**: [Your Email] | **GitHub**: [@oscar0686](https://github.com/oscar0686)
