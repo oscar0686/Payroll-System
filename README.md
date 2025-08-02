@@ -161,4 +161,4 @@ If you encounter any issues or have questions, please create an issue in the Git
 ---
 
 **Developed by Oscar Okumu** - Software Developer  
-**Contact**: [Your Email] | **GitHub**: [@oscar0686](https://github.com/oscar0686)
+**Contact**: ofulaokumu@gmail.com | **GitHub**: [@oscar0686](https://github.com/oscar0686)
